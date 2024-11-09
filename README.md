@@ -7,11 +7,12 @@
 ## 设计
 
 * 该项目将 [RoG2サンセリフStd B](https://www.morisawa.co.jp/fonts/specimen/1646) 和 [Wêlai Glow Sans Heavy](https://github.com/welai/glow-sans) 合并为了一个字体，以便简化代码。
-* 该项目中光环的下半部分使用白色描边，以清除光环周围的文字部分。
 
 ## 缺陷
 
-不支持半透明。
+* 该项目中光环的下半部分使用白色描边，以清除光环周围的文字部分。~~我不会做所以先这么弄了~~
+  
+  * 不支持透明背景。
 
 ## 原作
 
