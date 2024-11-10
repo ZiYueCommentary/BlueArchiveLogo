@@ -1,13 +1,8 @@
 ﻿using SkiaSharp;
 
-public static class BlurArchiveLogo
+public static class BlueArchiveLogo
 {
-    public static void Main()
-    {
-        Generate("Blue", "Archive", -15, 0);
-    }
-
-    public static void Generate(string left, string right, int haloX, int haloY)
+    public static byte[] Generate(string left, string right, int haloX, int haloY)
     {
         double offsetX = 250 / Math.Tan(double.DegreesToRadians(60));
         SKTypeface face = SKTypeface.FromFile("BlueArchive.ttf");
@@ -31,9 +26,9 @@ public static class BlurArchiveLogo
             SKTextAlign.Left, font, haloPaint);
         canvas.Restore();
         using SKBitmap halo = SKBitmap.Decode("halo.png");
-        canvas.DrawBitmap(halo, (width - 250F) / 2F + haloX, haloY, haloPaint);
+        canvas.DrawBitmap(halo, (float)((width - offsetX) / 2) - (rightWidth - leftWidth) / 2 + haloX, haloY, haloPaint);
 
         using SKData? output = surface.Snapshot().Encode();
-        File.WriteAllBytes("output.png", output.ToArray());
+        return output.ToArray();
     }
 }
