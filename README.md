@@ -14,6 +14,14 @@
   
   * 不支持透明背景。
 
+## 示例
+
+![](example.png)
+
+## 同类作品
+
+* “喜报悲报” 生成器：https://github.com/ZiYueCommentary/XibaoGenerator
+
 ## 原作
 
 https://github.com/nulla2011/Bluearchive-logo

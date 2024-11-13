@@ -2,6 +2,11 @@
 
 public static class BlueArchiveLogo
 {
+    public static void Main()
+    {
+        File.WriteAllBytes("output.png", Generate("ZiYue", "Bot", -15, 0));
+    }
+    
     public static byte[] Generate(string left, string right, int haloX, int haloY)
     {
         double offsetX = 250 / Math.Tan(double.DegreesToRadians(60));
@@ -13,8 +18,10 @@ public static class BlueArchiveLogo
         using SKSurface? surface = SKSurface.Create(new SKImageInfo((int)width, 250));
         SKCanvas? canvas = surface.Canvas;
         canvas.Clear(SKColors.White);
-        using SKPaint haloPaint = new SKPaint();
-        haloPaint.IsAntialias = true;
+        using SKPaint haloPaint = new SKPaint()
+        {
+            IsAntialias = true
+        };
         canvas.Save();
         SKMatrix matrix = SKMatrix.CreateSkew(-0.5F, 0);
         canvas.Concat(in matrix);
